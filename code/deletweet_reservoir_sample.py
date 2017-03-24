@@ -28,16 +28,25 @@ def reservoir(stream, k):
 def write_to_file(samples):
     '''write out sample subset to line separated json file'''
 
-    with open('../data/deletweet_subset_{}.json'.format(len(samples)), 'w') as outfile:
-        for i in range(len(samples)):
+    nmbr = len(samples)
+    file_name = 'deletweet_subset_{}.json'.format(nmbr)
+
+    with open('../data/{}'.format(file_name), 'w') as outfile:
+        for i in range(nmbr):
             tweet = json.loads(samples[i])
             json.dump(tweet, outfile)
             outfile.write('\n')
 
+    return(file_name, nmbr)
+
 
 if __name__ == '__main__':
-    deletweet = pandas.read_csv('/Users/kestrel/gitBucket/deletweet/data/deleted_tweets_cleaned.csv')
+    num = int(input('how many samples?\n'))
+
+    deletweet = pandas.read_csv('../../deletweet/data/deleted_tweets_cleaned.csv')
     tweets = deletweet['tweet']
 
-    samples = reservoir(tweets, 100)
-    write_to_file(samples)
+    samples = reservoir(tweets, 10000)
+    stats = write_to_file(samples)
+
+    print('created {} with {} samples'.format(*stats))
