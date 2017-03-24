@@ -46,7 +46,7 @@ if __name__ == '__main__':
     deletweet = pandas.read_csv('../../deletweet/data/deleted_tweets_cleaned.csv')
     tweets = deletweet['tweet']
 
-    samples = reservoir(tweets, 10000)
+    samples = reservoir(tweets, num)
     stats = write_to_file(samples)
 
     print('created {} with {} samples'.format(*stats))
