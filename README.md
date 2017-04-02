@@ -8,4 +8,4 @@ Using the [politwoops](https://projects.propublica.org/politwoops/) dataset, we 
 ***
 for more info on the open-source Politwoops tweet collection method visit [their github](https://github.com/propublica/politwoops-tweet-collector "politwoops tweet collector"). the [web application](https://github.com/propublica/politwoops "politwoops web front end") used to display the tweets on <https://projects.propublica.org/politwoops/> is also open-source
 
-*Shayna Anderson-Hill [https://github.com/shaynaalice] contributed frequently to this project*
+*[Shayna Anderson-Hill](https://github.com/shaynaalice "shaynaalice") contributed frequently to this project*
